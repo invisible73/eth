@@ -3,7 +3,6 @@ package transactions
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 
 	"github.com/invisible73/eth/pkg/services/eth"
 	"github.com/invisible73/eth/pkg/types"
@@ -18,7 +17,6 @@ type service struct {
 func (s *service) Send(tx types.Transaction) (string, error) {
 	hash, err := s.client.SendTransaction(tx)
 	if err != nil {
-		fmt.Println("err", err)
 		return "", err
 	}
 
